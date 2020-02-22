@@ -3,9 +3,14 @@ package com.example.counter;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         int count = Integer.parseInt(currentText.toString());
         count -= 1;
         textView.setText(Integer.toString(count));
+
     }
 
     /** called when reset button pressed */
@@ -71,4 +77,44 @@ public class MainActivity extends AppCompatActivity {
         resetAlert.show();
 
     }
+/*
+    public void settings (View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+ */
+
+    public void set (View view) {
+        AlertDialog.Builder setBuilder = new AlertDialog.Builder(this);
+        setBuilder.setTitle("Set Value");
+        final EditText value = new EditText(this);
+        value.setInputType(InputType.TYPE_CLASS_NUMBER);
+        value.setHint("Enter a value to preset...");
+        value.setWidth(50);
+        setBuilder.setView(value);
+
+        setBuilder.setPositiveButton(
+                "Set",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        TextView textView = (TextView) findViewById(R.id.textView);
+                        textView.setText(value.getText().toString());
+                    }
+                }
+        );
+
+        setBuilder.setNegativeButton(
+                "Cancel",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                }
+        );
+        AlertDialog setAlert = setBuilder.create();
+        setAlert.show();
+    }
+
 }
