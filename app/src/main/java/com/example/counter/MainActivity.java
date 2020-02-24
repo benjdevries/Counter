@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         final EditText value = new EditText(this);
         value.setInputType(InputType.TYPE_CLASS_NUMBER);
         value.setHint("Enter a value to preset...");
-        value.setWidth(50);
         setBuilder.setView(value);
 
         setBuilder.setPositiveButton(
@@ -98,8 +97,16 @@ public class MainActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        TextView textView = (TextView) findViewById(R.id.textView);
-                        textView.setText(value.getText().toString());
+                        try {
+                            TextView textView = (TextView) findViewById(R.id.textView);
+                            int myNumber = Integer.parseInt(value.getText().toString());
+//                            int zero = 0;
+                           textView.setText(Integer.toString(myNumber));
+                        } catch(Exception e) {
+
+                        }
+
+
                     }
                 }
         );
@@ -115,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
         );
         AlertDialog setAlert = setBuilder.create();
         setAlert.show();
+
     }
 
 }
