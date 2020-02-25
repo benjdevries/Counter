@@ -25,18 +25,18 @@ public class MainActivity extends AppCompatActivity {
     public void increment(View view) {
         TextView textView =  (TextView) findViewById(R.id.textView);
         CharSequence currentText = textView.getText();
-        int count = Integer.parseInt(currentText.toString());
+        long count = Long.parseLong(currentText.toString());
         count += 1;
-        textView.setText(Integer.toString(count));
+        textView.setText(Long.toString(count));
     }
 
     /** called when minus button pressed */
     public void decrement(View view) {
         TextView textView = (TextView) findViewById(R.id.textView);
         CharSequence currentText = textView.getText();
-        int count = Integer.parseInt(currentText.toString());
+        long count = Long.parseLong(currentText.toString());
         count -= 1;
-        textView.setText(Integer.toString(count));
+        textView.setText(Long.toString(count));
 
     }
 
@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         try {
                             TextView textView = (TextView) findViewById(R.id.textView);
-                            int myNumber = Integer.parseInt(value.getText().toString());
+                            long myNumber = Long.parseLong(value.getText().toString());
 //                            int zero = 0;
-                           textView.setText(Integer.toString(myNumber));
+                           textView.setText(Long.toString(myNumber));
                         } catch(Exception e) {
 
                         }

@@ -17,7 +17,7 @@
         android:textAlignment="center"
         android:gravity="center"
         android:autoSizeMinTextSize="50dp"
-        android:autoSizeMaxTextSize="150dp"
+        android:autoSizeMaxTextSize="500dp"
         app:layout_constraintBottom_toTopOf="@+id/topButtonHolder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +94,6 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
-            android:hapticFeedbackEnabled="true"
             android:onClick="set"
             android:text="@string/set_button" />
 
@@ -105,7 +104,6 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
-            android:hapticFeedbackEnabled="true"
             android:onClick="reset"
             android:text="@string/reset_button" />
 
