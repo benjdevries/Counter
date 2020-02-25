@@ -24,4 +24,5 @@
     <string name="base_header">Base</string>
     <string name="base_title">Counting base</string>
     <string name="set_button">Set Value</string>
+    <string name="plus_minus_size">50dp</string>
 </resources>

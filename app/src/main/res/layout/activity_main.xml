@@ -6,71 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginBottom="96dp"
-        android:onClick="decrement"
-        android:text="@string/minus"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:onClick="increment"
-        android:text="@string/plus"
-        android:textSize="40sp"
-        android:visibility="visible"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/button" />
-
     <TextView
         android:id="@+id/textView"
-        android:layout_width="56dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:autoSizeTextType="uniform"
         android:text="@string/counter_zero"
-        android:textSize="100sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:autoSizeMinTextSize="50dp"
+        android:autoSizeMaxTextSize="500dp"
+        app:layout_constraintBottom_toTopOf="@+id/topButtonHolder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="261dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginBottom="116dp"
-        android:onClick="reset"
-        android:text="@string/reset_button"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:onClick="set"
-        android:text="@string/set_button"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0" />
+        app:layout_constraintGuide_percent="0.00243309" />
+
+    <LinearLayout
+        android:id="@+id/topButtonHolder"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/lowerButtonHolder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/minus_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:hapticFeedbackEnabled="true"
+            android:onClick="decrement"
+            android:text="@string/minus" />
+
+        <Button
+            android:id="@+id/plus_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:hapticFeedbackEnabled="true"
+            android:onClick="increment"
+            android:text="@string/plus" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lowerButtonHolder"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923">
+
+        <Button
+            android:id="@+id/set_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:onClick="set"
+            android:text="@string/set_button" />
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:onClick="reset"
+            android:text="@string/reset_button" />
+
+    </LinearLayout>
+
 
     <!--
         <Button
