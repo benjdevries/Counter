@@ -9,18 +9,19 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/counter_zero"
-        android:textSize="100sp"
         android:autoSizeTextType="uniform"
+        android:text="@string/counter_zero"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:autoSizeMinTextSize="50dp"
+        android:autoSizeMaxTextSize="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/topButtonHolder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -30,9 +31,49 @@
         app:layout_constraintGuide_percent="0.00243309" />
 
     <LinearLayout
-        android:id="@+id/buttonHolder"
+        android:id="@+id/topButtonHolder"
         android:layout_width="0dp"
-        android:layout_height="76dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/lowerButtonHolder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/minus_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:hapticFeedbackEnabled="true"
+            android:onClick="decrement"
+            android:text="@string/minus" />
+
+        <Button
+            android:id="@+id/plus_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:hapticFeedbackEnabled="true"
+            android:onClick="increment"
+            android:text="@string/plus" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lowerButtonHolder"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
